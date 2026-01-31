@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initinal-scale=1.0">
+        <title>profile Card</title>
+        <style>
+            body{
+                font-family:Arial,sans-serif;
+                background-color: aqua;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+            }
+         .card{
+            background-color:blue;
+            border-radius:15px;
+            width: 350px;
+            padding:30px 50px;
+            text-align:center;
+            box-shadow:0 8px 20px rgba(0,0,0,0,2);
+            animation:fadeln 1s ease forwards;
+         }
+         .card img{
+            width:120px;
+            height: 120px;
+            border-radius: 50%;
+            border:4px solid black;
+            object-fit:cover;
+            animation:popln 0.8s ease forwards;
+            cursor:pointer;
+         }
+         .card h2{
+            margin:15px 0 5px;
+            font-size: 22px;
+            color:aquamarine;
+         }
+         .card h4{
+            margin: 0 0 15px 0;
+            font-weight: normal;
+            color:cadetblue;
+         }
+         .card p{
+            font-size:14px;
+            color:burlywood;
+            line-height: 1.5;
+            margin-bottom: 20px;
+         }
+         .skills{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            gap:8px;
+            margin-bottom:20px;
+        }
+        .skills  span{
+            background-color: blueviolet;
+            color: cadetblue;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            transition:transform 0.3s,background-color 0.3s;
+            cursor: pointer;
+        }
+        .skills span:hover{
+            transform:scale(1.1);
+            background-color: bisque;
+        }
+        .btns{
+            display:flex ;
+            justify-content:center ;
+            gap:15px;
+            margin-bottom: 15px;
+        }
+        .btns button{
+            padding:8px 16px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-weight: bold;
+            transition:transform 0.3s,background-color 0.3s ;            
+        }
+        .btn-contact{
+            background-color: bisque;
+            color:aqua;
+        }
+        .btn-contact:hover{
+            background-color: blueviolet;
+            transform:scale(1.05);
+        }
+        .btn-cv{
+            background-color: brown;
+            color:azure;
+        }
+        .btn-cv:hover{
+            background-color:cadetblue;
+            transform:scale(1.05);
+        }
+        .footer{
+            display:flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color:chartreuse;
+            margin-top:10px;
+        }
+        @keyframes fadein{
+            from{opacity:0;transform:transalteY(20px);}
+            to{opacity:1;transform:translateY(0);}
+            }
+            @keyframes popIn{
+                from{opacity:0;transform: scale(0.5);}
+                to{opacity:1;transform: scale(1);}
+            }
+        
+            </style>
+    </head>
+    <body>
+        <div class="card">
+            <img src="butterfly.jpg" alt="profile photo">
+            <h2>Gayathri.r</h2>
+            <h4>BCA Student</h4>
+            <p>I am a student of BCA From SJR college
+                learning about new techonoliges like Data analytics, datascienceand analytics
+            </p>
+            <div class="skills">
+                <span>python programming</span>
+                <span>c++</span>
+                <span>java</span>
+                <span>ML</span>
+                <span>c</span>
+        </div>
+        <div class="footer">
+            <button class="btn-contact">Contact Me</button>
+            <button class="btn-cv">Download CV</button>
+        </div>
+        </div>
+        <script>
+            document.querySelector(".btn-contact").addEventListener("click",function(){
+                alert("contact deatils:\n\nEmail:gayathri@gmail.com\n phone:+91 9945780910")
+            ; });
+            document.querySelector(".btn-cv").addEventListener("click",function()
+            { alert("CV download will start soon (demo).");
+            });
+            let skills=document.querySelectorAll(".skills span");
+            skills.forEach(function(skill){
+                skill.addEventListener("click",function()
+                {
+                    alert("skill:"+this.innerText);
+                })
+                });
+                document.querySelector(".card img").addEventListener("click",function(){
+                    alert("hello welcome to my portfolio!");
+                });
+</script>
+    </body>
+</html>
